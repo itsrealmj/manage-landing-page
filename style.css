@@ -83,7 +83,7 @@ body {
     align-items: center;
     padding: 0 1.5rem;
 }
-.banner section, section .different-about-manage {
+.banner section {
     text-align: center;
 }
 
@@ -91,6 +91,10 @@ body {
     padding: 1rem 0;
 }
 
+.different-about-manage {
+    padding: 0 1.5rem;
+    text-align: center;
+}
 
 section .strategies{
     padding-left: 1rem;
@@ -150,6 +154,7 @@ article  figure img {
     display: flex;
     justify-content: center;
     gap: 0 1rem;
+    cursor: pointer;
 }
 .shape-btn .active {
     background-color: rgba(255, 68, 0, 0.776);

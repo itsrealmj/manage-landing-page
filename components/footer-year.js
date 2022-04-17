@@ -1,37 +1,24 @@
-let arrayBtn = document.querySelectorAll('.shape-btn span')
-arrayBtn.forEach(btn => {
-    btn.addEventListener('click', sorting)
-})
-export function sorting(event) {
-    if (this.classList.contains('Anisha')) {
-        document.querySelector('.testimonial section').style = "transform : translateX(0px)"
-        for (const btnShape of arrayBtn) {
-            btnShape.classList.remove('active')
-        }
-        this.classList.add('active')
-    }else if(this.classList.contains('Ali')) {
-        for (const btnShape of arrayBtn) {
-            btnShape.classList.remove('active')
-        }
-        this.classList.add('active')
-        document.querySelector('.testimonial section').style = "transform : translateX(-300px)"
-    }else if(this.classList.contains('Richard')) {
-        for (const btnShape of arrayBtn) {
-            btnShape.classList.remove('active')
-        }
-        this.classList.add('active')
-        document.querySelector('.testimonial section').style = "transform : translateX(-600px)"
-    }else if(this.classList.contains('Shanai')) {
-        for (const btnShape of arrayBtn) {
-            btnShape.classList.remove('active')
-        }
-        this.classList.add('active')
-        document.querySelector('.testimonial section').style = "transform : translateX(-900px)"
-    }else {
+// TESTIMONIAL SECTION
 
-    }
+let TestimonialPixelVal = [
+    {name : "Anisha", pixel : "0px"},
+    {name : "Ali", pixel : "-300px"},
+    {name : "Richard", pixel : "-600px"},
+    {name : "Shanai", pixel : "-900px"}
+]
+export let TestimonialArrayBtn = document.querySelectorAll('.shape-btn span')
+for (let i = 0; i < TestimonialArrayBtn.length; i++) {
+    TestimonialArrayBtn[i].addEventListener('click', function(){
+        if (TestimonialPixelVal[i].name === this.classList[0]) {
+            document.querySelector('.testimonial section').style = `transform : translateX(${TestimonialPixelVal[i].pixel})`
+            for (const btn of TestimonialArrayBtn) {
+                btn.classList.remove('active')
+            }
+            this.classList.add('active')
+        }
+    })
 }
-
+// FOOTER SECTION
 
 export let currentYear = new Date().getFullYear()
 let displayYear = document.querySelector('.current-year').innerText = currentYear
